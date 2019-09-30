@@ -1,0 +1,33 @@
+{
+  "connection": "default",
+  "collectionName": "categories",
+  "info": {
+    "name": "categories",
+    "description": "Categories"
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "licenciatura",
+        "maestria"
+      ],
+      "type": "enumeration"
+    },
+    "picture": {
+      "group": "picture",
+      "type": "group"
+    }
+  }
+}

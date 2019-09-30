@@ -44,7 +44,8 @@
       "type": "string"
     },
     "school": {
-      "type": "string"
+      "model": "school",
+      "via": "careers"
     }
   }
 }

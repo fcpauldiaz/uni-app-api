@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/careers": {
+    "/schools": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Career"
+                    "$ref": "#/components/schemas/School"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "School"
         ],
         "parameters": [
           {
@@ -195,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/School"
                 }
               }
             }
@@ -233,7 +233,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "School"
         ],
         "requestBody": {
           "description": "",
@@ -241,14 +241,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCareer"
+                "$ref": "#/components/schemas/NewSchool"
               }
             }
           }
         }
       }
     },
-    "/careers/count": {
+    "/schools/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -300,12 +300,12 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "School"
         ],
         "parameters": []
       }
     },
-    "/careers/{id}": {
+    "/schools/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -315,7 +315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/School"
                 }
               }
             }
@@ -353,7 +353,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "School"
         ],
         "parameters": [
           {
@@ -377,7 +377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/School"
                 }
               }
             }
@@ -415,7 +415,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "School"
         ],
         "requestBody": {
           "description": "",
@@ -423,7 +423,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCareer"
+                "$ref": "#/components/schemas/NewSchool"
               }
             }
           }
@@ -489,7 +489,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "School"
         ],
         "parameters": [
           {
@@ -508,7 +508,7 @@
   },
   "components": {
     "schemas": {
-      "Career": {
+      "School": {
         "required": [
           "id"
         ],
@@ -519,30 +519,11 @@
           "title": {
             "type": "string"
           },
-          "years": {
-            "type": "integer"
-          },
-          "credits": {
-            "type": "integer"
-          },
-          "fb_page": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "licenciatura",
-              "maestria"
-            ]
-          },
-          "list_details": {
+          "careers": {
             "type": "array",
             "items": {
-              "type": "object",
               "required": [
-                "id",
-                "title",
-                "body"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -551,87 +532,28 @@
                 "title": {
                   "type": "string"
                 },
-                "body": {
+                "years": {
+                  "type": "integer"
+                },
+                "credits": {
+                  "type": "integer"
+                },
+                "fb_page": {
                   "type": "string"
-                }
-              }
-            }
-          },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "admission_link": {
-            "type": "string"
-          },
-          "school": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "careers": {
-                "type": "array",
-                "items": {
+                },
+                "type": {
+                  "type": "string"
+                },
+                "list_details": {
+                  "type": "group"
+                },
+                "picture": {
+                  "type": "group"
+                },
+                "admission_link": {
+                  "type": "string"
+                },
+                "school": {
                   "type": "string"
                 }
               }
@@ -639,112 +561,16 @@
           }
         }
       },
-      "NewCareer": {
+      "NewSchool": {
         "properties": {
           "title": {
             "type": "string"
           },
-          "years": {
-            "type": "integer"
-          },
-          "credits": {
-            "type": "integer"
-          },
-          "fb_page": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "licenciatura",
-              "maestria"
-            ]
-          },
-          "list_details": {
+          "careers": {
             "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "title",
-                "body"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                }
-              }
+              "type": "string"
             }
-          },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "admission_link": {
-            "type": "string"
-          },
-          "school": {
-            "type": "string"
           }
         }
       }
@@ -752,7 +578,7 @@
   },
   "tags": [
     {
-      "name": "Career"
+      "name": "School"
     }
   ]
 }

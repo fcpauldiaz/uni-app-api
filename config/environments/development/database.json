@@ -4,15 +4,15 @@
     "default": {
       "connector": "strapi-hook-mongoose",
       "settings": {
-        "database": "uni-app-api",
-        "host": "127.0.0.1",
+        "database": "heroku_7bmwcdcm",
+        "host": "ds161856.mlab.com",
         "srv": false,
-        "port": 27017,
-        "username": "",
-        "password": ""
+        "port": 61856,
+        "username": "heroku_7bmwcdcm",
+        "password": "2phnm0mhhrmppmdsu4vs41f4ai"
       },
       "options": {
-        "authenticationDatabase": ""
+        "authenticationDatabase": "heroku_7bmwcdcm"
       }
     }
   }

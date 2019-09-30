@@ -617,6 +617,9 @@
           },
           "admission_link": {
             "type": "string"
+          },
+          "school": {
+            "type": "string"
           }
         }
       },
@@ -722,6 +725,9 @@
             }
           },
           "admission_link": {
+            "type": "string"
+          },
+          "school": {
             "type": "string"
           }
         }

@@ -42,6 +42,9 @@
     },
     "admission_link": {
       "type": "string"
+    },
+    "school": {
+      "type": "string"
     }
   }
 }

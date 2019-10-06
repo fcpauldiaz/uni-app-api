@@ -1,12 +1,15 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "school",
   "info": {
     "name": "school",
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "title": {
@@ -15,6 +18,10 @@
     "careers": {
       "collection": "career",
       "via": "school"
+    },
+    "picture": {
+      "group": "picture",
+      "type": "group"
     }
   }
 }

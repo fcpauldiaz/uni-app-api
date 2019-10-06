@@ -634,6 +634,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "picture": {
+                "type": "group"
               }
             }
           }

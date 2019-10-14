@@ -486,6 +486,9 @@
                 },
                 "category": {
                   "type": "string"
+                },
+                "additional_Info": {
+                  "type": "group"
                 }
               }
             }

@@ -14,7 +14,7 @@ module.exports = {
         model: 'Career',
         populate: {
           path: 'category',
-          model: 'Categories'
+          model: 'Categories',
         }
       });
   }

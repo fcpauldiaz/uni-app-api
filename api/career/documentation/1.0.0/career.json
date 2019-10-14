@@ -662,7 +662,7 @@
               }
             }
           },
-          "additional_Info": {
+          "additional_info": {
             "type": "array",
             "items": {
               "type": "object",
@@ -794,7 +794,7 @@
           "category": {
             "type": "string"
           },
-          "additional_Info": {
+          "additional_info": {
             "type": "array",
             "items": {
               "type": "object",

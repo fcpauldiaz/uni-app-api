@@ -50,7 +50,7 @@
     "category": {
       "model": "categories"
     },
-    "additional_Info": {
+    "additional_info": {
       "group": "additional_info",
       "repeatable": true,
       "type": "group"

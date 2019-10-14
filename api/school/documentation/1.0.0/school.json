@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/School"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -53,138 +54,7 @@
         "tags": [
           "School"
         ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array"
-            },
-            "deprecated": false
-          }
-        ]
+        "parameters": []
       },
       "post": {
         "deprecated": false,
@@ -519,6 +389,64 @@
           "title": {
             "type": "string"
           },
+          "picture": {
+            "type": "object",
+            "required": [
+              "id",
+              "image"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "image": {
+                "required": [
+                  "id",
+                  "name",
+                  "hash",
+                  "mime",
+                  "size",
+                  "url",
+                  "provider"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "hash": {
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "type": "string"
+                  },
+                  "ext": {
+                    "type": "string"
+                  },
+                  "mime": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string"
+                  },
+                  "public_id": {
+                    "type": "string"
+                  },
+                  "related": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
           "careers": {
             "type": "array",
             "items": {
@@ -555,64 +483,9 @@
                 },
                 "school": {
                   "type": "string"
-                }
-              }
-            }
-          },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
+                },
+                "category": {
+                  "type": "string"
                 }
               }
             }
@@ -624,12 +497,6 @@
           "title": {
             "type": "string"
           },
-          "careers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "picture": {
             "type": "object",
             "required": [
@@ -686,6 +553,12 @@
                   }
                 }
               }
+            }
+          },
+          "careers": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }

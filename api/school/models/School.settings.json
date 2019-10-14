@@ -15,13 +15,13 @@
     "title": {
       "type": "string"
     },
-    "careers": {
-      "collection": "career",
-      "via": "school"
-    },
     "picture": {
       "group": "picture",
       "type": "group"
+    },
+    "careers": {
+      "collection": "career",
+      "via": "school"
     }
   }
 }

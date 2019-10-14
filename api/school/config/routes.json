@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/schools",
-      "handler": "School.find",
+      "handler": "School.findAll",
       "config": {
         "policies": []
       }

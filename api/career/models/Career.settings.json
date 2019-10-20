@@ -54,6 +54,9 @@
       "group": "additional_info",
       "repeatable": true,
       "type": "group"
+    },
+    "whatsapp": {
+      "type": "integer"
     }
   }
 }

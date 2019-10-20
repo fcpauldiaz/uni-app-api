@@ -489,6 +489,9 @@
                 },
                 "additional_info": {
                   "type": "group"
+                },
+                "whatsapp": {
+                  "type": "integer"
                 }
               }
             }

@@ -681,6 +681,9 @@
                 }
               }
             }
+          },
+          "whatsapp": {
+            "type": "integer"
           }
         }
       },
@@ -813,6 +816,9 @@
                 }
               }
             }
+          },
+          "whatsapp": {
+            "type": "integer"
           }
         }
       }

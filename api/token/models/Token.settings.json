@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "token",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "token": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string"
+    }
+  }
+}

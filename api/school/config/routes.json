@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/schools",
-      "handler": "School.findAll",
+      "handler": "school.find",
       "config": {
         "policies": []
       }
@@ -11,7 +11,7 @@
     {
       "method": "GET",
       "path": "/schools/count",
-      "handler": "School.count",
+      "handler": "school.count",
       "config": {
         "policies": []
       }
@@ -19,7 +19,7 @@
     {
       "method": "GET",
       "path": "/schools/:id",
-      "handler": "School.findOne",
+      "handler": "school.findOne",
       "config": {
         "policies": []
       }
@@ -27,7 +27,7 @@
     {
       "method": "POST",
       "path": "/schools",
-      "handler": "School.create",
+      "handler": "school.create",
       "config": {
         "policies": []
       }
@@ -35,7 +35,7 @@
     {
       "method": "PUT",
       "path": "/schools/:id",
-      "handler": "School.update",
+      "handler": "school.update",
       "config": {
         "policies": []
       }
@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/schools/:id",
-      "handler": "School.delete",
+      "handler": "school.delete",
       "config": {
         "policies": []
       }

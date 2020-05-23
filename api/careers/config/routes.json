@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/careers",
-      "handler": "Career.find",
+      "handler": "careers.find",
       "config": {
         "policies": []
       }
@@ -11,7 +11,7 @@
     {
       "method": "GET",
       "path": "/careers/count",
-      "handler": "Career.count",
+      "handler": "careers.count",
       "config": {
         "policies": []
       }
@@ -19,7 +19,7 @@
     {
       "method": "GET",
       "path": "/careers/:id",
-      "handler": "Career.findOne",
+      "handler": "careers.findOne",
       "config": {
         "policies": []
       }
@@ -27,7 +27,7 @@
     {
       "method": "POST",
       "path": "/careers",
-      "handler": "Career.create",
+      "handler": "careers.create",
       "config": {
         "policies": []
       }
@@ -35,7 +35,7 @@
     {
       "method": "PUT",
       "path": "/careers/:id",
-      "handler": "Career.update",
+      "handler": "careers.update",
       "config": {
         "policies": []
       }
@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/careers/:id",
-      "handler": "Career.delete",
+      "handler": "careers.delete",
       "config": {
         "policies": []
       }

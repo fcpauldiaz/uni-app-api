@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": []
       }
@@ -67,7 +67,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -105,7 +105,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -133,7 +133,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsRole"
+                    "$ref": "#/components/schemas/UsersPermissionsRole"
                   }
                 }
               }
@@ -172,7 +172,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -291,7 +291,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -301,7 +304,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -316,7 +322,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -354,7 +360,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "requestBody": {
           "description": "",
@@ -362,7 +368,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsRole"
+                "$ref": "#/components/schemas/NewUsersPermissionsRole"
               }
             }
           }
@@ -379,7 +385,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -417,7 +423,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -437,7 +443,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsRole"
+                "$ref": "#/components/schemas/NewUsersPermissionsRole"
               }
             }
           }
@@ -494,7 +500,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -513,7 +519,7 @@
   },
   "components": {
     "schemas": {
-      "Users-PermissionsRole": {
+      "UsersPermissionsRole": {
         "required": [
           "id",
           "name"
@@ -608,7 +614,7 @@
           }
         }
       },
-      "NewUsers-PermissionsRole": {
+      "NewUsersPermissionsRole": {
         "required": [
           "name"
         ],
@@ -641,7 +647,7 @@
   },
   "tags": [
     {
-      "name": "Users-Permissions - Role"
+      "name": "UsersPermissions - Role"
     }
   ]
 }

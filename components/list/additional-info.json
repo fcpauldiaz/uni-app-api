@@ -1,10 +1,10 @@
 {
+  "collectionName": "components_list_additional_infos",
   "info": {
-    "name": "Additional_info",
-    "description": ""
+    "name": "additional_info",
+    "icon": "archive"
   },
-  "connection": "default",
-  "collectionName": "groups_additional_infos",
+  "options": {},
   "attributes": {
     "link": {
       "type": "string"

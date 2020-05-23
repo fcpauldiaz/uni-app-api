@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -180,7 +180,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -190,7 +193,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -249,7 +255,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -306,7 +312,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -335,7 +341,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -373,7 +379,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -381,7 +387,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -440,7 +446,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -508,7 +514,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -579,7 +585,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -650,24 +656,25 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
     },
-    "/users": {
-      "get": {
+    "/auth/send-email-confirmation": {
+      "post": {
         "deprecated": false,
-        "description": "Retrieve all user documents",
+        "description": "Send a confirmation email to user",
         "responses": {
           "200": {
             "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -706,7 +713,77 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve all user documents",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -825,7 +902,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -835,7 +915,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -852,7 +935,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -890,7 +973,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -905,7 +988,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -943,7 +1026,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -967,7 +1050,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -1005,7 +1088,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -1025,7 +1108,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -1082,7 +1165,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -1101,7 +1184,7 @@
   },
   "components": {
     "schemas": {
-      "Users-PermissionsUser": {
+      "UsersPermissionsUser": {
         "required": [
           "id",
           "username",
@@ -1164,7 +1247,7 @@
           }
         }
       },
-      "NewUsers-PermissionsUser": {
+      "NewUsersPermissionsUser": {
         "required": [
           "username",
           "email"
@@ -1205,7 +1288,7 @@
   },
   "tags": [
     {
-      "name": "Users-Permissions - User"
+      "name": "UsersPermissions - User"
     }
   ]
 }

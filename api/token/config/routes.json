@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/tokens",
-      "handler": "Token.find",
+      "handler": "token.find",
       "config": {
         "policies": []
       }
@@ -11,7 +11,7 @@
     {
       "method": "GET",
       "path": "/tokens/count",
-      "handler": "Token.count",
+      "handler": "token.count",
       "config": {
         "policies": []
       }
@@ -19,7 +19,7 @@
     {
       "method": "GET",
       "path": "/tokens/:id",
-      "handler": "Token.findOne",
+      "handler": "token.findOne",
       "config": {
         "policies": []
       }
@@ -27,7 +27,7 @@
     {
       "method": "POST",
       "path": "/tokens",
-      "handler": "Token.create",
+      "handler": "token.create",
       "config": {
         "policies": []
       }
@@ -35,7 +35,7 @@
     {
       "method": "PUT",
       "path": "/tokens/:id",
-      "handler": "Token.update",
+      "handler": "token.update",
       "config": {
         "policies": []
       }
@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/tokens/:id",
-      "handler": "Token.delete",
+      "handler": "token.delete",
       "config": {
         "policies": []
       }

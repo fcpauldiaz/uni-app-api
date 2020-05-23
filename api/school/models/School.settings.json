@@ -1,27 +1,31 @@
 {
-  "connection": "default",
-  "collectionName": "school",
+  "kind": "collectionType",
+  "collectionName": "schools",
   "info": {
-    "name": "school",
-    "description": ""
+    "name": "school"
   },
   "options": {
-    "timestamps": [
-      "createdAt",
-      "updatedAt"
-    ]
+    "increments": true,
+    "timestamps": true
   },
   "attributes": {
     "title": {
       "type": "string"
     },
     "picture": {
-      "group": "picture",
-      "type": "group"
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     },
     "careers": {
-      "collection": "career",
-      "via": "school"
+      "via": "school",
+      "collection": "careers"
     }
   }
 }

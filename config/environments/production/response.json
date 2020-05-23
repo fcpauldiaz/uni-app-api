@@ -7,6 +7,6 @@
   },
   "poweredBy": {
     "enabled": true,
-    "value": "Chapi Labs"
+    "value": "Strapi <strapi.io>"
   }
 }

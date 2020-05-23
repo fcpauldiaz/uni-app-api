@@ -1,20 +1,16 @@
 {
-  "connection": "default",
-  "collectionName": "token",
+  "kind": "collectionType",
+  "collectionName": "tokens",
   "info": {
-    "name": "token",
-    "description": ""
+    "name": "token"
   },
   "options": {
-    "timestamps": [
-      "createdAt",
-      "updatedAt"
-    ]
+    "increments": true,
+    "timestamps": true
   },
   "attributes": {
     "token": {
-      "type": "string",
-      "unique": true
+      "type": "string"
     },
     "os": {
       "type": "string"

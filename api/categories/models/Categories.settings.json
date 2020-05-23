@@ -1,15 +1,12 @@
 {
-  "connection": "default",
+  "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "name": "categories",
-    "description": "Categories"
+    "name": "Categories"
   },
   "options": {
-    "timestamps": [
-      "createdAt",
-      "updatedAt"
-    ]
+    "increments": true,
+    "timestamps": true
   },
   "attributes": {
     "title": {
@@ -19,15 +16,22 @@
       "type": "string"
     },
     "type": {
+      "type": "enumeration",
       "enum": [
         "licenciatura",
         "maestria"
-      ],
-      "type": "enumeration"
+      ]
     },
     "picture": {
-      "group": "picture",
-      "type": "group"
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

@@ -1,21 +1,8 @@
 'use strict';
 
 /**
- * Read the documentation () to implement custom service functions
+ * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/services.html#core-services)
+ * to customize this service
  */
 
-module.exports = {
-  findAll(params) {
-    return strapi
-      .query('school')
-      .model.find()
-      .populate({
-        path: 'careers',
-        model: 'Career',
-        populate: {
-          path: 'category',
-          model: 'Categories',
-        }
-      });
-  }
-};
+module.exports = {};

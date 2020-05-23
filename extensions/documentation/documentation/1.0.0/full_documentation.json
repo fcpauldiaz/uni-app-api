@@ -14,11 +14,12 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/20/2019 11:18:55 PM"
+    "x-generation-date": "05/23/2020 12:08:50 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
-    "showGeneratedFiles": true
+    "showGeneratedFiles": true,
+    "generateDefaultResponse": true
   },
   "servers": [
     {
@@ -47,16 +48,16 @@
     "/careers": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the careers's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Career"
+                    "$ref": "#/components/schemas/Careers"
                   }
                 }
               }
@@ -95,7 +96,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": [
           {
@@ -214,7 +215,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -224,7 +228,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -232,14 +239,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new careers record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/Careers"
                 }
               }
             }
@@ -277,7 +284,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "requestBody": {
           "description": "",
@@ -285,7 +292,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCareer"
+                "$ref": "#/components/schemas/NewCareers"
               }
             }
           }
@@ -295,10 +302,10 @@
     "/careers/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of careers documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -344,7 +351,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": []
       }
@@ -352,14 +359,14 @@
     "/careers/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one careers record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/Careers"
                 }
               }
             }
@@ -397,7 +404,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": [
           {
@@ -414,14 +421,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single careers record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/Careers"
                 }
               }
             }
@@ -459,7 +466,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "requestBody": {
           "description": "",
@@ -467,7 +474,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCareer"
+                "$ref": "#/components/schemas/NewCareers"
               }
             }
           }
@@ -487,10 +494,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single careers record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single careers based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -533,7 +540,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": [
           {
@@ -719,7 +726,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -729,7 +739,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -1064,10 +1077,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/School"
                   }
                 }
               }
@@ -1108,7 +1120,144 @@
         "tags": [
           "School"
         ],
-        "parameters": []
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
       },
       "post": {
         "deprecated": false,
@@ -1599,7 +1748,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -1609,7 +1761,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -2444,7 +2599,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": []
       }
@@ -2459,7 +2614,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -2497,7 +2652,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2525,7 +2680,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsRole"
+                    "$ref": "#/components/schemas/UsersPermissionsRole"
                   }
                 }
               }
@@ -2564,7 +2719,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2683,7 +2838,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -2693,7 +2851,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -2708,7 +2869,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -2746,7 +2907,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "requestBody": {
           "description": "",
@@ -2754,7 +2915,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsRole"
+                "$ref": "#/components/schemas/NewUsersPermissionsRole"
               }
             }
           }
@@ -2771,7 +2932,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsRole"
+                  "$ref": "#/components/schemas/UsersPermissionsRole"
                 }
               }
             }
@@ -2809,7 +2970,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2829,7 +2990,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsRole"
+                "$ref": "#/components/schemas/NewUsersPermissionsRole"
               }
             }
           }
@@ -2886,7 +3047,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - Role"
+          "UsersPermissions - Role"
         ],
         "parameters": [
           {
@@ -2914,7 +3075,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
                   }
                 }
               }
@@ -2953,7 +3114,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3082,7 +3243,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -3092,7 +3256,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -3151,7 +3318,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -3208,7 +3375,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3237,7 +3404,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3275,7 +3442,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3283,7 +3450,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -3342,7 +3509,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3410,7 +3577,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3481,7 +3648,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -3552,24 +3719,25 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
     },
-    "/users": {
-      "get": {
+    "/auth/send-email-confirmation": {
+      "post": {
         "deprecated": false,
-        "description": "Retrieve all user documents",
+        "description": "Send a confirmation email to user",
         "responses": {
           "200": {
             "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -3608,7 +3776,77 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve all user documents",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3727,7 +3965,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -3737,7 +3978,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -3754,7 +3998,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3792,7 +4036,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -3807,7 +4051,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3845,7 +4089,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3869,7 +4113,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -3907,7 +4151,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -3927,7 +4171,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -3984,7 +4228,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -4003,7 +4247,7 @@
   },
   "components": {
     "schemas": {
-      "Career": {
+      "Careers": {
         "required": [
           "id"
         ],
@@ -4035,9 +4279,7 @@
             "items": {
               "type": "object",
               "required": [
-                "id",
-                "title",
-                "body"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -4053,65 +4295,94 @@
             }
           },
           "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
                 }
               }
             }
           },
           "admission_link": {
             "type": "string"
+          },
+          "additional_info": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "whatsapp": {
+            "type": "integer"
           },
           "school": {
             "required": [
@@ -4125,7 +4396,10 @@
                 "type": "string"
               },
               "picture": {
-                "type": "group"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "careers": {
                 "type": "array",
@@ -4153,36 +4427,16 @@
                 "type": "string"
               },
               "picture": {
-                "type": "group"
-              }
-            }
-          },
-          "additional_info": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "link": {
-                  "type": "string"
-                },
-                "name": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
               }
             }
-          },
-          "whatsapp": {
-            "type": "integer"
           }
         }
       },
-      "NewCareer": {
+      "NewCareers": {
         "properties": {
           "title": {
             "type": "string"
@@ -4208,9 +4462,7 @@
             "items": {
               "type": "object",
               "required": [
-                "id",
-                "title",
-                "body"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -4225,71 +4477,7 @@
               }
             }
           },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
           "admission_link": {
-            "type": "string"
-          },
-          "school": {
-            "type": "string"
-          },
-          "category": {
             "type": "string"
           },
           "additional_info": {
@@ -4314,6 +4502,12 @@
           },
           "whatsapp": {
             "type": "integer"
+          },
+          "school": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
           }
         }
       },
@@ -4339,59 +4533,65 @@
             ]
           },
           "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
                 }
               }
             }
@@ -4412,64 +4612,6 @@
               "licenciatura",
               "maestria"
             ]
-          },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
           }
         }
       },
@@ -4485,59 +4627,65 @@
             "type": "string"
           },
           "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
                 }
               }
             }
@@ -4568,25 +4716,28 @@
                   "type": "string"
                 },
                 "list_details": {
-                  "type": "group"
+                  "type": "component"
                 },
                 "picture": {
-                  "type": "group"
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "admission_link": {
                   "type": "string"
+                },
+                "additional_info": {
+                  "type": "component"
+                },
+                "whatsapp": {
+                  "type": "integer"
                 },
                 "school": {
                   "type": "string"
                 },
                 "category": {
                   "type": "string"
-                },
-                "additional_info": {
-                  "type": "group"
-                },
-                "whatsapp": {
-                  "type": "integer"
                 }
               }
             }
@@ -4597,64 +4748,6 @@
         "properties": {
           "title": {
             "type": "string"
-          },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
           },
           "careers": {
             "type": "array",
@@ -4690,7 +4783,7 @@
           }
         }
       },
-      "Users-PermissionsRole": {
+      "UsersPermissionsRole": {
         "required": [
           "id",
           "name"
@@ -4785,7 +4878,7 @@
           }
         }
       },
-      "NewUsers-PermissionsRole": {
+      "NewUsersPermissionsRole": {
         "required": [
           "name"
         ],
@@ -4814,7 +4907,7 @@
           }
         }
       },
-      "Users-PermissionsUser": {
+      "UsersPermissionsUser": {
         "required": [
           "id",
           "username",
@@ -4877,7 +4970,7 @@
           }
         }
       },
-      "NewUsers-PermissionsUser": {
+      "NewUsersPermissionsUser": {
         "required": [
           "username",
           "email"
@@ -4940,7 +5033,7 @@
   },
   "tags": [
     {
-      "name": "Career"
+      "name": "Careers"
     },
     {
       "name": "Categories"
@@ -4958,10 +5051,10 @@
       "name": "Upload - File"
     },
     {
-      "name": "Users-Permissions - Role"
+      "name": "UsersPermissions - Role"
     },
     {
-      "name": "Users-Permissions - User"
+      "name": "UsersPermissions - User"
     }
   ]
 }

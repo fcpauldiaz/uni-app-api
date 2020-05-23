@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careers",
+  "info": {
+    "name": "Careers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "years": {
+      "type": "biginteger"
+    },
+    "credits": {
+      "type": "biginteger"
+    },
+    "fb_page": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "licenciatura",
+        "maestria"
+      ]
+    },
+    "list_details": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.detail-item"
+    },
+    "picture": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "admission_link": {
+      "type": "string"
+    },
+    "additional_info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.additional-info"
+    },
+    "whatsapp": {
+      "type": "biginteger"
+    },
+    "school": {
+      "model": "school",
+      "via": "careers"
+    },
+    "category": {
+      "model": "categories"
+    }
+  }
+}

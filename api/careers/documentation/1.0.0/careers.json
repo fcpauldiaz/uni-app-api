@@ -3,16 +3,16 @@
     "/careers": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the careers's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Career"
+                    "$ref": "#/components/schemas/Careers"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": [
           {
@@ -170,7 +170,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -180,7 +183,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -188,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new careers record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/Careers"
                 }
               }
             }
@@ -233,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "requestBody": {
           "description": "",
@@ -241,7 +247,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCareer"
+                "$ref": "#/components/schemas/NewCareers"
               }
             }
           }
@@ -251,10 +257,10 @@
     "/careers/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of careers documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -300,7 +306,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": []
       }
@@ -308,14 +314,14 @@
     "/careers/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one careers record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/Careers"
                 }
               }
             }
@@ -353,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": [
           {
@@ -370,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single careers record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve careers document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Career"
+                  "$ref": "#/components/schemas/Careers"
                 }
               }
             }
@@ -415,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "requestBody": {
           "description": "",
@@ -423,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCareer"
+                "$ref": "#/components/schemas/NewCareers"
               }
             }
           }
@@ -443,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single careers record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single careers based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -489,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Career"
+          "Careers"
         ],
         "parameters": [
           {
@@ -508,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Career": {
+      "Careers": {
         "required": [
           "id"
         ],
@@ -540,9 +546,7 @@
             "items": {
               "type": "object",
               "required": [
-                "id",
-                "title",
-                "body"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -558,65 +562,94 @@
             }
           },
           "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
                 }
               }
             }
           },
           "admission_link": {
             "type": "string"
+          },
+          "additional_info": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "whatsapp": {
+            "type": "integer"
           },
           "school": {
             "required": [
@@ -630,7 +663,10 @@
                 "type": "string"
               },
               "picture": {
-                "type": "group"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "careers": {
                 "type": "array",
@@ -658,36 +694,16 @@
                 "type": "string"
               },
               "picture": {
-                "type": "group"
-              }
-            }
-          },
-          "additional_info": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "link": {
-                  "type": "string"
-                },
-                "name": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
               }
             }
-          },
-          "whatsapp": {
-            "type": "integer"
           }
         }
       },
-      "NewCareer": {
+      "NewCareers": {
         "properties": {
           "title": {
             "type": "string"
@@ -713,9 +729,7 @@
             "items": {
               "type": "object",
               "required": [
-                "id",
-                "title",
-                "body"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -730,71 +744,7 @@
               }
             }
           },
-          "picture": {
-            "type": "object",
-            "required": [
-              "id",
-              "image"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "image": {
-                "required": [
-                  "id",
-                  "name",
-                  "hash",
-                  "mime",
-                  "size",
-                  "url",
-                  "provider"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "hash": {
-                    "type": "string"
-                  },
-                  "sha256": {
-                    "type": "string"
-                  },
-                  "ext": {
-                    "type": "string"
-                  },
-                  "mime": {
-                    "type": "string"
-                  },
-                  "size": {
-                    "type": "string"
-                  },
-                  "url": {
-                    "type": "string"
-                  },
-                  "provider": {
-                    "type": "string"
-                  },
-                  "public_id": {
-                    "type": "string"
-                  },
-                  "related": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
           "admission_link": {
-            "type": "string"
-          },
-          "school": {
-            "type": "string"
-          },
-          "category": {
             "type": "string"
           },
           "additional_info": {
@@ -819,6 +769,12 @@
           },
           "whatsapp": {
             "type": "integer"
+          },
+          "school": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
           }
         }
       }
@@ -826,7 +782,7 @@
   },
   "tags": [
     {
-      "name": "Career"
+      "name": "Careers"
     }
   ]
 }

@@ -538,7 +538,9 @@
             "type": "string",
             "enum": [
               "licenciatura",
-              "maestria"
+              "maestria",
+              "diplomado",
+              "otros_programas"
             ]
           },
           "list_details": {
@@ -721,7 +723,9 @@
             "type": "string",
             "enum": [
               "licenciatura",
-              "maestria"
+              "maestria",
+              "diplomado",
+              "otros_programas"
             ]
           },
           "list_details": {
